@@ -84,6 +84,11 @@ body {
     margin: 1em;
   }
 
+
+  .article-text{
+    max-width: 70%;
+    float: left;
+  }
   /* article and aside styling */
   article, aside {
       display: flex;
@@ -96,3 +101,37 @@ body {
     flex-direction: row;
     justify-content: space-between;
   }
+
+
+/* media query for small screen */
+@media screen and (max-width: 600px) {
+  nav {
+      position: static; /* Sets navigation bar to static position */
+  }
+
+  nav ul {
+      flex-direction: column; /* Changes direction to column */
+  }
+
+  nav ul li {
+      padding: .5em; /* Adds padding */
+      text-align: center; /* Centers text */
+  }
+
+  .grid {
+      flex-direction: column-reverse; /* Reverses direction for small screens */
+  }
+
+  .photos {
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Changes grid to auto-fill columns */
+      gap: 10px; /* Increases gap between grid items */
+  }
+
+  .feature {
+      float: none; /* Disables float */
+      margin: 0 auto; /* Centers the element */
+      max-width: 100%; /* Sets maximum width to 100% */
+  }
+
+  article {
+      padding-top: 1em; 
