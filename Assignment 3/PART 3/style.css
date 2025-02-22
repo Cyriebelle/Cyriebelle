@@ -1,0 +1,178 @@
+/* importing in the fonts for the program */
+
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html{
+    font-size: 10px ;
+}
+.quintessential-regular, h1, h2, h3, h4, h5, h6 {
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.open-sans-300 {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.open-sans-600 {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+.open-sans-800 {
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+/* General setup */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    font-family: "Open Sans", serif;
+
+}
+
+/* Layout */
+
+section {
+    float: left;
+    width: 50%;
+}
+
+aside {
+    float: left;
+    width: 30%;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+}
+
+header, section, aside, nav, footer {
+    padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+
+header > h1 {
+    font-size: 5rem;
+}
+
+body {
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+}
+
+header{
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+section > p{
+    text-indent: 20px;
+}
+
+a {
+    outline: none;
+
+
+    &:link{
+        color: #a66;
+
+        &::after{
+            display: inline-block;
+            content: '';
+            background-image: url("Assignment 3\PART 3\external-link-52.png");
+            background-size: 1em,  1em;
+            background-repeat: none;
+            background-position:center ;
+            width: 1em;
+            height: 1em;
+            margin-left: 0.2em;
+
+        }
+    }
+    
+    &:focus, &:hover, &:active{
+        text-decoration: none;
+        color: rgb(230, 160, 160)
+    }
+
+    &:visited{
+        color: rgb(62, 26, 26);
+    }
+}
+
+ul{
+    list-style: square;
+    line-height: 1.75em ;
+}
+
+ol{
+    line-height: 1.75em;
+}
+
+nav > ul {
+    list-style: none;
+
+    font-family: "Quintessential", serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: medium;
+
+    li{
+        margin-bottom: 1.5em;
+
+        a:link{
+            display: block;
+            text-decoration: none;
+            border: 1px solid #a66;
+            padding: 1em 1em ;
+            text-align: center;
+
+            &::after{
+                background: none;
+
+            }
+
+            &:focus, &:hover, &:active{
+                background-color: #a66;
+                color: #fff;
+            }
+
+        }
+    }
+}
