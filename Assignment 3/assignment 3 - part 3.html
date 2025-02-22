@@ -20,7 +20,7 @@ Description: This file will show you a simple community school's homepage.
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
         html{
-            font-size: 16px ;
+            font-size: 10px ;
         }
         .quintessential-regular, h1, h2, h3, h4, h5, h6 {
             font-family: "Quintessential", serif;
@@ -101,6 +101,98 @@ Description: This file will show you a simple community school's homepage.
         }
         
         /* WRITE YOUR CODE BELOW HERE */
+
+        header > h1 {
+            font-size: 5rem;
+        }
+
+        body {
+            line-height: 1.5em;
+            letter-spacing: 0.1em;
+            word-spacing: 0.1em;
+        }
+
+        header{
+            text-align: center;
+            letter-spacing: 0.2em;
+        }
+
+        section > p{
+            text-indent: 20px;
+        }
+
+        a {
+            outline: none;
+ 
+
+            &:link{
+                color: #a66;
+
+                &::after{
+                    display: inline-block;
+                    content: '';
+                    background-image: url("file:///C:/Users/Admin/OneDrive/Documents/GitHub/Cyriebelle/Assignment%203/external-link-52.png");
+                    background-size: 1em,  1em;
+                    background-repeat: none;
+                    background-position:center ;
+                    width: 1em;
+                    height: 1em;
+                    margin-left: 0.2em;
+
+                }
+            }
+            
+            &:focus, &:hover, &:active{
+                text-decoration: none;
+                color: rgb(230, 160, 160)
+            }
+        
+            &:visited{
+                color: rgb(62, 26, 26);
+            }
+        }
+
+        ul{
+            list-style: square;
+            line-height: 1.75em ;
+        }
+
+        ol{
+            line-height: 1.75em;
+        }
+
+        nav > ul {
+            list-style: none;
+
+            font-family: "Quintessential", serif;
+            font-weight: 800;
+            font-style: normal;
+            font-size: medium;
+
+            li{
+                margin-bottom: 1.5em;
+
+                a:link{
+                    display: block;
+                    text-decoration: none;
+                    border: 1px solid #a66;
+                    padding: 1em 1em ;
+                    text-align: center;
+
+                    &::after{
+                        background: none;
+
+                    }
+
+                    &:focus, &:hover, &:active{
+                        background-color: #a66;
+                        color: #fff;
+                    }
+
+                }
+            }
+        }
+
     </style>
 
   </head>
