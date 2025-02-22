@@ -6,7 +6,11 @@ Description: This file is the CSS code for the simple community school's homepag
 
 
 /* importing in the fonts for the program */
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+
+/* customize font */
 @font-face {
     font-family: 'CustomFont';
     src: url('customfont.eot'); /* IE9 Compat Modes */
@@ -17,9 +21,6 @@ Description: This file is the CSS code for the simple community school's homepag
          url('customfont.svg#CustomFont') format('svg'); /* Legacy iOS */
 }
 
-
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 html{
     font-size: 10px ;
@@ -33,7 +34,6 @@ html{
 
 .open-sans-300 {
     font-family: "Open Sans", serif;
-    font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
     font-variation-settings:
@@ -42,7 +42,6 @@ html{
 
 .open-sans-600 {
     font-family: "Open Sans", serif;
-    font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     font-variation-settings:
@@ -51,7 +50,6 @@ html{
 
 .open-sans-800 {
     font-family: "Open Sans", serif;
-    font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
     font-variation-settings:
@@ -126,33 +124,32 @@ section > p{
 
 a {
     outline: none;
+    text-decoration: underline;
+}
 
+a:link {
+    color: #a66;
+}
 
-    &:link{
-        color: #a66;
+a:link::after {
+    display: inline-block;
+    content: '';
+    background-image: url("picture/external-link-52.png");
+    background-size: 1em 1em;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1em;
+    height: 1em;
+    margin-left: 0.2em;
+}
 
-        &::after{
-            display: inline-block;
-            content: '';
-            background-image: url("picture/external-link-52.png");
-            background-size: 1em,  1em;
-            background-repeat: none;
-            background-position:center ;
-            width: 1em;
-            height: 1em;
-            margin-left: 0.2em;
+a:focus, a:hover, a:active {
+    text-decoration: none;
+    color: rgb(230, 160, 160);
+}
 
-        }
-    }
-    
-    &:focus, &:hover, &:active{
-        text-decoration: none;
-        color: rgb(230, 160, 160)
-    }
-
-    &:visited{
-        color: rgb(62, 26, 26);
-    }
+a:visited {
+    color: rgb(62, 26, 26)
 }
 
 ul{
@@ -166,32 +163,29 @@ ol{
 
 nav > ul {
     list-style: none;
-
     font-family: "Quintessential", serif;
     font-weight: 800;
     font-style: normal;
     font-size: medium;
+}
 
-    li{
-        margin-bottom: 1.5em;
+nav li {
+    margin-bottom: 1.5em;
+}
 
-        a:link{
-            display: block;
-            text-decoration: none;
-            border: 1px solid #a66;
-            padding: 1em 1em ;
-            text-align: center;
+nav li a:link {
+    display: block;
+    text-decoration: none;
+    border: 1px solid #a66;
+    padding: 1em 1em;
+    text-align: center;
+}
 
-            &::after{
-                background: none;
+nav li a:link::after {
+    background: none;
+}
 
-            }
-
-            &:focus, &:hover, &:active{
-                background-color: #a66;
-                color: #fff;
-            }
-
-        }
-    }
+nav li a:focus, nav li a:hover, nav li a:active {
+    background-color: #a66;
+    color: #fff;
 }
