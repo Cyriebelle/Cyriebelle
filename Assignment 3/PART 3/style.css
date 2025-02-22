@@ -7,11 +7,23 @@ Description: This file is the CSS code for the simple community school's homepag
 
 /* importing in the fonts for the program */
 
+@font-face {
+    font-family: 'CustomFont';
+    src: url('customfont.eot'); /* IE9 Compat Modes */
+    src: url('customfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('customfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('customfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('customfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('customfont.svg#CustomFont') format('svg'); /* Legacy iOS */
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 html{
     font-size: 10px ;
+    font-family: "Open Sans", serif;
 }
 .quintessential-regular, h1, h2, h3, h4, h5, h6 {
     font-family: "Quintessential", serif;

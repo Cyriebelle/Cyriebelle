@@ -11,7 +11,7 @@ body {
 
   /* style for h1 */
   h1 {
-    color: #E31C79; /* changed the color of the header from #375e97 to #E31C79 */
+    color: #ff69b4; /* changed the color of the header from #375e97 to #E31C79 */
     font-size: 2em;
     font-family: Georgia, "Times New Roman", Times, serif;
     border-bottom: 10px dotted #800080;
