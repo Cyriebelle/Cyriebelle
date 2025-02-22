@@ -17,6 +17,8 @@ body {
   img {
       max-width: 100%;
       display: block;
+      float: left;
+      margin-right: 1em;
   }
   
   /* logo styling */
@@ -41,8 +43,6 @@ body {
     padding: .5em;
     position: sticky;
     top: 0;
-
-
   }
   
   /* navigation list styling */
@@ -82,18 +82,17 @@ body {
   img.article-img {
     float: left;
     margin: 1em;
-}
+  }
 
-/* article and aside styling */
-article, aside {
+  /* article and aside styling */
+  article, aside {
+      display: flex;
+      flex-direction: column;
+  }
+
+  /* container for article and aside */
+  .container {
     display: flex;
-    flex-direction: column;
-}
-
-/* container for article and aside */
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
+    flex-direction: row;
+    justify-content: space-between;
+  }
