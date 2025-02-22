@@ -33,8 +33,7 @@ body {
   
 
   /*style for the link */
-  a:link,
-  a:visited {
+  a:link, a:visited {
     color: #fb6542;
   }
   

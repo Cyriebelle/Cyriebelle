@@ -78,32 +78,7 @@ body {
       margin-right: 1em;
   }
 
-  /*image article styling */
-  img.article-img {
-    float: left;
-    margin: 1em;
-  }
-
-
-  .article-text{
-    max-width: 70%;
-    float: left;
-  }
-  /* article and aside styling */
-  article, aside {
-      display: flex;
-      flex-direction: column;
-  }
-
-  /* container for article and aside */
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-
-/* media query for small screen */
+  /* media query for small screen */
 @media screen and (max-width: 600px) {
   nav {
       position: static; /* Sets navigation bar to static position */
@@ -135,3 +110,5 @@ body {
 
   article {
       padding-top: 1em; 
+  }
+}
