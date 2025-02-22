@@ -1,3 +1,10 @@
+/*
+Name: Mariah Jurao
+File: style.css
+Date: 2/22/2025
+Description: This file is the CSS code for the simple community school's homepage. */
+
+
 /* importing in the fonts for the program */
 
 @import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
@@ -115,7 +122,7 @@ a {
         &::after{
             display: inline-block;
             content: '';
-            background-image: url("Assignment 3\PART 3\external-link-52.png");
+            background-image: url("Assignment 3/PART 3/external-link-52.png");
             background-size: 1em,  1em;
             background-repeat: none;
             background-position:center ;
