@@ -97,3 +97,39 @@ article, aside {
   justify-content: space-between;
 }
 
+/* media query for small screen */
+  @media screen and (max-width: 600px) {
+    nav {
+        position: static;
+    }
+
+    nav ul {
+        flex-direction: column;
+    
+    }
+    nav ul li{
+        padding: .5em;
+        text-align: center;
+    }
+    
+    .grid{
+        flex-direction: column-reverse;
+    }
+
+    .photos{
+        grid-template-columns: repeat(auto-fill,
+        minmax(80px, 1fr));
+        gap: 10px
+
+    }
+
+    .feature{
+        float: none; /*disables float */
+        margin: 0 auto; /* centers the elements */
+        max-width: 100%; /* maximum width */
+    }
+
+    article{
+        padding-top: 1em;
+    }
+  }
