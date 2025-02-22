@@ -4,6 +4,8 @@ File: style.css
 Date: 2/22/2025
 Description: This is the CSS code for the simple webpage layout. */
 
+
+/* body styling */
 body {
     background-color: #fff;
     color: #333;
@@ -11,11 +13,13 @@ body {
     font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
   }
 
+  /* image styling */
   img {
       max-width: 100%;
       display: block;
   }
   
+  /* logo styling */
   .logo {
     font-size: 200%;
     padding: 50px 20px;
@@ -23,6 +27,7 @@ body {
     max-width: 980px;
   }
   
+  /* grid styling */
   .grid {
     margin: 0 auto;
     padding: 0 20px;
@@ -30,6 +35,7 @@ body {
     display: flex;
   }
   
+  /* navigation bar styling */
   nav {
     background-color: #000;
     padding: .5em;
@@ -39,6 +45,7 @@ body {
 
   }
   
+  /* navigation list styling */
   nav ul {
     margin: 0;
     padding: 0;
@@ -47,12 +54,14 @@ body {
     justify-content: space-between;
   }
   
+  /* navigation links styling */
   nav a {
     color: #fff;
     text-decoration: none;
     padding: .5em 1em;
   }
   
+  /* photo grid styling */
   .photos {
     list-style: none;
     margin: 0;
@@ -62,12 +71,33 @@ body {
     gap: 1px;
   }
 
+  /* feature styling */
   .feature {
       width: 200px;
       float: left;
       margin-right: 1em;
   }
 
+  /*image article styling */
+  img.article-img {
+    float: left;
+    margin: 1em;
+}
+
+/* article and aside styling */
+article, aside {
+    display: flex;
+    flex-direction: column;
+}
+
+/* container for article and aside */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* media query for small screen */
   @media screen and (max-width: 600px) {
     nav {
         position: static;
@@ -94,9 +124,9 @@ body {
     }
 
     .feature{
-        float: none;
-        margin: 0 auto;
-        max-width: 100%;
+        float: none; /*disables float */
+        margin: 0 auto; /* centers the elements */
+        max-width: 100%; /* maximum width */
     }
 
     article{
