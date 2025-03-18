@@ -1,3 +1,10 @@
+/*
+Name: Mariah Jurao
+File: main.js
+Date: March 18, 2025
+Description: This is the javascript code for the silly story generator. */
+
+
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
@@ -13,7 +20,8 @@ const insertY = ["the soup kitchen", "Disneyland", "the White House"];
 const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
 function result() {
-
+    let newStory =  storyText;
+    
     if(customName.value !== '') {
       const name = customName.value;
   
