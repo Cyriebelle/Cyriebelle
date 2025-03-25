@@ -1,4 +1,6 @@
 // set up canvas
+const para = document.querySelector('p');
+let count = 0
 
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
@@ -9,7 +11,8 @@ const height = (canvas.height = window.innerHeight);
 // function to generate random number
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  const number =  Math.floor(Math.random() * (max - min + 1)) + min;
+  return number;
 }
 
 // function to generate random RGB color value
@@ -32,10 +35,9 @@ class Ball extends Shape {
     super(x, y, velX, velY)
     this.color = color;
     this.size = size;
+    this.exists = true;
   }
   
-  
-
 
   draw() {
     ctx.beginPath();
@@ -114,7 +116,7 @@ class EvilCircle extends Shape {
     ctx.stroke();
   }
 
-  update() {
+  checkBounds() {
     if (this.x + this.size >= width) {
       this.x -= this.size;
     }
@@ -134,13 +136,15 @@ class EvilCircle extends Shape {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball && ball.exists)) {
+      if (ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < this.size + ball.size) {
-          ball.color = this.color = randomRGB();
+          ball.exists = false;
+          count--;
+          para.textContent = "Ball count: " + count;
         }
       }
     }
@@ -164,17 +168,27 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  count++;
+  para.textContent = "Ball count: " + count;
 }
+
+const evillBall = new EvilCircle (random(0, width), random(0, height));
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists){
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
   }
+
+  evillBall.draw();
+  evillBall.checkBounds();
+  evillBall.collisionDetect();
 
   requestAnimationFrame(loop);
 }
