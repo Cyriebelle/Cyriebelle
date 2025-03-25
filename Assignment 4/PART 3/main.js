@@ -56,6 +56,20 @@ class Ball {
         this.y += this.velY;
       } //End of Update
       
+      collisionDetect() {
+        for (const ball of balls) {
+          if (this !== ball) {
+            const dx = this.x - ball.x;
+            const dy = this.y - ball.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+      
+            if (distance < this.size + ball.size) {
+              ball.color = this.color = randomRGB();
+            }
+          }
+        }
+      } // End of Collision Class
+      
 } //End of Ball Class
 
 const testBall = new Ball(50, 100, 4, 4, "blue", 10);
@@ -80,12 +94,13 @@ while (balls.length < 25) {
 } // End of while loop
 
 function loop() {
-    ctx.fillStyle = "rgb(0 0 0 / 25%)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
     ctx.fillRect(0, 0, width, height);
   
     for (const ball of balls) {
       ball.draw();
       ball.update();
+      ball.collisionDetect();
     }
   
     requestAnimationFrame(loop);
