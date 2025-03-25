@@ -172,7 +172,7 @@ while (balls.length < 25) {
   para.textContent = "Ball count: " + count;
 }
 
-const evillBall = new EvilCircle (random(0, width), random(0, height));
+const evilCircle = new EvilCircle (random(0, width), random(0, height));
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
@@ -186,9 +186,9 @@ function loop() {
     }
   }
 
-  evillBall.draw();
-  evillBall.checkBounds();
-  evillBall.collisionDetect();
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
 
   requestAnimationFrame(loop);
 }
