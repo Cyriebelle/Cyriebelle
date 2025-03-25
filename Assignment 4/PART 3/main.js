@@ -26,66 +26,60 @@ class Ball {
       this.velY = velY;
       this.color = color;
       this.size = size;
-    }
-  }
-
-  draw() {
+    } 
+    
+    draw() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
-  }
+    } // End of Draw
 
-  const testBall = new Ball(50, 100, 4, 4, "blue", 10);
+    update() {
+        if ((this.x + this.size) >= width) {
+          this.velX = -(this.velX);
+        }
+      
+        if ((this.x - this.size) <= 0) {
+          this.velX = -(this.velX);
+        }
+      
+        if ((this.y + this.size) >= height) {
+          this.velY = -(this.velY);
+        }
+      
+        if ((this.y - this.size) <= 0) {
+          this.velY = -(this.velY);
+        }
+      
+        this.x += this.velX;
+        this.y += this.velY;
+      } //End of Update
+      
+} //End of Ball Class
 
-  testBall.x;
-  testBall.size;
-  testBall.color;
-  testBall.draw();
+const testBall = new Ball(50, 100, 4, 4, "blue", 10);
+testBall.draw()
 
-  update() {
-    if ((this.x + this.size) >= width) {
-      this.velX = -(this.velX);
-    }
-  
-    if ((this.x - this.size) <= 0) {
-      this.velX = -(this.velX);
-    }
-  
-    if ((this.y + this.size) >= height) {
-      this.velY = -(this.velY);
-    }
-  
-    if ((this.y - this.size) <= 0) {
-      this.velY = -(this.velY);
-    }
-  
-    this.x += this.velX;
-    this.y += this.velY;
-  }
+const balls = [];
 
-  update() {
-    if ((this.x + this.size) >= width) {
-      this.velX = -(this.velX);
-    }
-  
-    if ((this.x - this.size) <= 0) {
-      this.velX = -(this.velX);
-    }
-  
-    if ((this.y + this.size) >= height) {
-      this.velY = -(this.velY);
-    }
-  
-    if ((this.y - this.size) <= 0) {
-      this.velY = -(this.velY);
-    }
-  
-    this.x += this.velX;
-    this.y += this.velY;
-  }
-  
-  function loop() {
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    // ball position always drawn at least one ball width
+    // away from the edge of the canvas, to avoid drawing errors
+    random(0 + size, width - size),
+    random(0 + size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    randomRGB(),
+    size,
+  );
+
+  balls.push(ball);
+} // End of while loop
+
+function loop() {
     ctx.fillStyle = "rgb(0 0 0 / 25%)";
     ctx.fillRect(0, 0, width, height);
   
