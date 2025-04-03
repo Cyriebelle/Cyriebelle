@@ -1,3 +1,10 @@
+/*
+Name: Mariah Jurao
+File: index.html
+Date: March 22, 2025
+Description: This is the javascipt code for the image gallery. */
+
+
 /* Selecting the HTML elements */
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');

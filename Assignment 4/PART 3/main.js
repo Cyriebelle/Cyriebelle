@@ -1,3 +1,9 @@
+/*
+Name: Mariah Jurao
+File: index.html
+Date: March 24, 2025
+Description: This is the javascript code for the object building practice. */
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
