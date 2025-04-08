@@ -1,3 +1,10 @@
+/*
+Name: Mariah Jurao
+File: index.html
+Date: March 25, 2025
+Description: This is the javascript code for the object building practice with the evil circle. */
+
+
 // set up canvas
 const para = document.querySelector('p');
 let count = 0
