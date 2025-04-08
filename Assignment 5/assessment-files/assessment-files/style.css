@@ -14,6 +14,8 @@ body {
   width: 80%;
   min-width: 1024px;
   margin: 0 auto;
+  display: flex; /* Enable flexbox for main layout */
+  flex-direction: column; /* Stack header, main, footer vertically */
 }
 
 /* || typography */
@@ -40,6 +42,13 @@ h3{
   font-size: 2.2rem;
 }
 
+h4{
+  font-family: 'Sonsie One', cursive;
+  color: #2a2a2a;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
 article h2 {
   font-size: 2.5rem; /* Changes size for headings within the article */
 }
@@ -57,13 +66,68 @@ p, li, table {
   line-height: 1.5;
 }
 
-/* || header layout */
+/* || header layout (for "Related" section) */
 
-nav, article, footer, .secondary {
+.related-header {
+  background-color: white;
+  padding: 10px 30px;
+  margin-bottom: 10px; /* Add margin below the header */
+}
+
+.related-header h2 {
+  text-align: left; /* Align "Related" heading to the left */
+  margin-top: 0; /* Remove default top margin for h2 */
+  margin-bottom: 0.5em; /* Add some bottom margin */
+}
+
+.related-header ul {
+  text-align: left;
+  padding-left: 1em; /* Add some indentation for the list */
+  list-style-type: none; /* Remove bullet points */
+}
+
+.related-header li {
+  margin-bottom: 0.3em; /* Add some spacing between list items */
+}
+
+.related-header a {
+  color: #0073e6; /* Blue to differentiate */
+  text-decoration: underline;
+}
+
+.related-header a:hover {
+  text-decoration: none;
+  color: #005bb5; /* Darker blue for hover effect */
+}
+
+.related-header .search {
+  display: flex;
+  align-items: center;
+  margin-top: 1em; /* Add some space above the search bar */
+}
+
+.related-header .search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.related-header .search input[type="search"] {
+  flex: 3;
+}
+
+.related-header .search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+nav, article, footer {
   background-color: white;
 }
 
-article, footer, .secondary {
+article, footer {
   padding: 10px 30px;
 }
 
@@ -79,20 +143,20 @@ nav {
   margin-bottom: 10px;
 }
 
-nav, ul {
+nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-nav, li {
+nav li {
   display: inline;
   text-align: center;
   flex: 1;
 }
 
-nav, a {
+nav a {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
@@ -100,7 +164,7 @@ nav, a {
   color: black;
 }
 
-nav, .search {
+nav .search {
   flex: 1;
   display: flex;
   align-items: center;
@@ -108,16 +172,16 @@ nav, .search {
   padding: 0 2em;
 }
 
-.search input {
+nav .search input {
   font-size: 1.6rem;
   height: 32px;
 }
 
-.search input[type="search"] {
+nav .search input[type="search"] {
   flex: 3;
 }
 
-.search input[type="submit"] {
+nav .search input[type="submit"] {
   flex: 1;
   margin-left: 1rem;
   background: #333;
@@ -129,6 +193,7 @@ nav, .search {
 
 main {
   display: flex;
+  flex: 1; /* Allow main to grow and take available vertical space */
 }
 
 article {
@@ -137,6 +202,8 @@ article {
 
 .secondary {
   flex: 2;
+  background-color: white; /* Ensure the secondary section has a white background */
+  padding: 10px 30px;
 }
 
 footer {
